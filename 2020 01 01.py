@@ -25,8 +25,10 @@ while z < len(P) :
     else :
         DP = [0 for x in range (P[z])]
         DP[0] = 1
-        DP[1] = 1
-        DP[2] = 1
+        if P[z] > 1 :
+            DP[1] = 1
+        if P[z] > 2 :
+            DP[2] = 1
         for x in range (3,P[z]) :
             DP[x] = DP[x-2] + DP[x-3]
         print(DP[P[z]-1])

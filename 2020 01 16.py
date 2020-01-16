@@ -1,19 +1,10 @@
 N = int(input())
-A = list(map(int,input().split()))
+A = [0]
+A += list(map(int,input().split()))
+tmp = [0 for x in range (N+1)]
+result = -1001
 
-DP = [0 for x in range (N)]
-
-tmp = -999
-for i in range (N) :
-    for j in range (i,N) :
-        if i == 0 and sum(A[i:j+1]) >= DP[i]:
-            DP[i] = sum(A[i:j+1])
-        elif i >= 1 :
-            DP[i] = DP[i-1] - A[i-1]
-            if DP[i] <= 0 :
-                if tmp <= sum(A[i:j+1]) :
-                    tmp = sum(A[i:j+1])
-                if j == N-1 :
-                    DP[i] = tmp
-                
-print(max(DP))
+for x in range (1,N+1) :
+    tmp[x] = max(tmp[x-1] + A[x],A[x])
+    result = max(result,tmp[x])
+print(result)

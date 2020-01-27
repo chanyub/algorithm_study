@@ -1,0 +1,29 @@
+A = int(input())
+N = 1000-A
+answer = 0
+X = 0
+while N != 0 :
+    if N >=500 :
+        X = int(N / 500)
+        N = N % 500
+        answer += X
+    elif N >= 100 and N <500 :
+        X = int(N / 100)
+        N = N % 100
+        answer += X
+    elif N >= 50 and N < 100 :
+        X = int(N / 50)
+        N = N % 50
+        answer += X
+    elif N >= 10 and N < 50 :
+        X = int(N / 10)
+        N = N % 10
+        answer += X
+    elif N >= 5 and N < 10 :
+        X = int(N / 5)
+        N = N % 5
+        answer += X
+    elif N < 5 :
+        N -= 1
+        answer += 1
+print(answer)

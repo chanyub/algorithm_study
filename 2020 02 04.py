@@ -9,7 +9,7 @@ A = [0 for x in range (N)]
 B = [0 for x in range (N)]
 for x in range (N) :
     A[x],B[x] = map(int,input().split())
-print(A,B)
+#print(A,B)
 a = 0
 b = 0
 c = 0

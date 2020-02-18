@@ -11,4 +11,4 @@ for i in range (1,N) :
             if tmp > DP[i] :
                 DP[i] = tmp
             
-print(DP)
+print(max(DP))
